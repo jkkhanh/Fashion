@@ -147,6 +147,13 @@ const ShopConTextProvider = (props) => {
         }
     },[])
 
+
+    useEffect(() => {
+        if (token) {
+            getUserCart(token); // Lấy giỏ hàng ngay khi token có giá trị
+        }
+    }, [token]);
+
     const value = {
         products,category,
         formatPrice,
